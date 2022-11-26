@@ -33,7 +33,7 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('instansi_id')
+                Forms\Components\Select::make('instansi')
                     ->label('Instansi/SKPD')
                     ->multiple()
                     ->relationship('instansis', 'nama_instansi')
@@ -54,7 +54,6 @@ class UserResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->dehydrateStateUsing(fn($state) => !empty($state) ? Hash::make($state) : ''),
-//                Forms\Components\Textarea::make('skpd'),
                 Forms\Components\Select::make('roles')
                     ->multiple()
                     ->relationship('roles', 'name')
@@ -69,13 +68,12 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('instansi.nama_instansi'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('username'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('nomor_surat_tugas'),
-                Tables\Columns\TextColumn::make('skpd'),
-                Tables\Columns\IconColumn::make('is_admin')
+                Tables\Columns\TextColumn::make('instansis.nama_instansi')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('username')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('email')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('nomor_surat_tugas')->searchable()->sortable(),
+                Tables\Columns\IconColumn::make('is_admin')->searchable()->sortable()
                     ->boolean(),
             ])
             ->prependActions([
