@@ -67,4 +67,10 @@ class User extends Authenticatable implements FilamentUser
         return true;
 //        return str_ends_with($this->email, '@sipinpeg.com');
     }
+
+    public function canManageSettings(): bool
+    {
+//        return $this->can('manage.settings');
+        return true;
+    }
 }

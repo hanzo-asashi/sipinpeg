@@ -18,7 +18,7 @@ class InstansiPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('{{ ViewAny }}');
+        return $user->can('view_any_instansi');
     }
 
     /**
@@ -76,7 +76,7 @@ class InstansiPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('{{ DeleteAny }}');
+        return $user->can('delete_any_instansi');
     }
 
     /**
@@ -99,7 +99,7 @@ class InstansiPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_instansi');
     }
 
     /**
@@ -122,7 +122,7 @@ class InstansiPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_instansi');
     }
 
     /**
@@ -134,7 +134,7 @@ class InstansiPolicy
      */
     public function replicate(User $user, Instansi $instansi)
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_instansi');
     }
 
     /**
@@ -145,7 +145,7 @@ class InstansiPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_instansi');
     }
 
 }

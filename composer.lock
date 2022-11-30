@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f12cac0ed8d45e28fca7432d1bd41d6",
+    "content-hash": "df077f441f28630619dbab1c2856ea6f",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -205,6 +205,84 @@
             "time": "2022-11-23T15:56:47+00:00"
         },
         {
+            "name": "awcodes/filament-table-repeater",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/awcodes/filament-table-repeater.git",
+                "reference": "478d4641aa6553b2679811490c7f9101fad87785"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/awcodes/filament-table-repeater/zipball/478d4641aa6553b2679811490c7f9101fad87785",
+                "reference": "478d4641aa6553b2679811490c7f9101fad87785",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^9.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.13.5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "pestphp/pest-plugin-livewire": "^1.0",
+                "pestphp/pest-plugin-parallel": "^0.3",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Awcodes\\FilamentTableRepeater\\FilamentTableRepeaterServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentTableRepeater": "Awcodes\\FilamentTableRepeater\\Facades\\FilamentTableRepeater"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Awcodes\\FilamentTableRepeater\\": "src",
+                    "Awcodes\\FilamentTableRepeater\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Weston",
+                    "email": "awcodes1@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A modified version of the Filament Forms Repeater to display it as a table.",
+            "homepage": "https://github.com/awcodes/filament-table-repeater",
+            "keywords": [
+                "awcodes",
+                "filament-table-repeater",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/awcodes/filament-table-repeater/issues",
+                "source": "https://github.com/awcodes/filament-table-repeater/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/awcodes",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-11-02T17:04:35+00:00"
+        },
+        {
             "name": "bacon/bacon-qr-code",
             "version": "2.0.7",
             "source": {
@@ -334,6 +412,85 @@
                 }
             ],
             "time": "2022-07-06T11:12:10+00:00"
+        },
+        {
+            "name": "bezhansalleh/filament-addons",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bezhanSalleh/filament-addons.git",
+                "reference": "93e8235b4969fa6842afe03758b70fb3f99dd4a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bezhanSalleh/filament-addons/zipball/93e8235b4969fa6842afe03758b70fb3f99dd4a6",
+                "reference": "93e8235b4969fa6842afe03758b70fb3f99dd4a6",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0",
+                "illuminate/contracts": "^8.0|^9.0",
+                "php": "^8.0|^8.1",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.8",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BezhanSalleh\\FilamentAddons\\FilamentAddonsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BezhanSalleh\\FilamentAddons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bezhan Salleh",
+                    "email": "bezhan_salleh@yahoo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Set of Filament Component Addons with different designs and extra functionalities ",
+            "homepage": "https://github.com/bezhansalleh/filament-addons",
+            "keywords": [
+                "bezhanSalleh",
+                "filament-addons",
+                "filament-component-addons",
+                "filament-component-extensions",
+                "filament-extra",
+                "filament-tab-pills",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/bezhanSalleh/filament-addons/issues",
+                "source": "https://github.com/bezhanSalleh/filament-addons/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/bezhanSalleh",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-09-04T07:05:44+00:00"
         },
         {
             "name": "bezhansalleh/filament-shield",
@@ -2751,16 +2908,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.10.3",
+            "version": "3.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a"
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
-                "reference": "8013fb046c6a244b2b1b75cc95d732ed6bcdeb8a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
+                "reference": "a7790f3dd1b27af81d380e6b2afa77c16ab7e181",
                 "shasum": ""
             },
             "require": {
@@ -2822,7 +2979,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.10.3"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.10.4"
             },
             "funding": [
                 {
@@ -2838,7 +2995,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-14T10:42:43+00:00"
+            "time": "2022-11-26T19:48:01+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -4746,6 +4903,53 @@
             "time": "2022-11-05T23:03:38+00:00"
         },
         {
+            "name": "reworck/filament-settings",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reworck/filament-settings.git",
+                "reference": "59e13e69063c38ad8e4e592cf272b9f63fa13a5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reworck/filament-settings/zipball/59e13e69063c38ad8e4e592cf272b9f63fa13a5a",
+                "reference": "59e13e69063c38ad8e4e592cf272b9f63fa13a5a",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^v2.8.2",
+                "php": "^8.0",
+                "spatie/valuestore": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Reworck\\FilamentSettings\\FilamentSettingsProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Reworck\\FilamentSettings\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "quintenbuis",
+                    "email": "quinten@reworck.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manage your settings in filament for spatie/valuestore",
+            "support": {
+                "issues": "https://github.com/reworck/filament-settings/issues",
+                "source": "https://github.com/reworck/filament-settings/tree/0.3.0"
+            },
+            "time": "2022-08-17T13:49:40+00:00"
+        },
+        {
             "name": "ryangjchandler/blade-capture-directive",
             "version": "v0.2.2",
             "source": {
@@ -4875,6 +5079,80 @@
                 "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.4.0"
             },
             "time": "2021-12-11T13:40:54+00:00"
+        },
+        {
+            "name": "savannabits/filament-flatpickr",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/filament-flatpickr.git",
+                "reference": "9c42ea036a49e64b29721028d7c351f7892bdc2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/filament-flatpickr/zipball/9c42ea036a49e64b29721028d7c351f7892bdc2c",
+                "reference": "9c42ea036a49e64b29721028d7c351f7892bdc2c",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.15",
+                "illuminate/contracts": "^8.0|^9.0",
+                "php": "^8.0|^8.1",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Savannabits\\Flatpickr\\FlatpickrServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flatpickr": "Savannabits\\Flatpickr\\Facades\\Flatpickr"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Savannabits\\Flatpickr\\": "src",
+                    "Savannabits\\Flatpickr\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Maosa",
+                    "email": "smaosa@savannabits.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The popular Datetime Picker as a Filament Field",
+            "homepage": "https://github.com/savannabits/filament-flatpickr",
+            "keywords": [
+                "filament-flatpickr",
+                "laravel",
+                "savannabits"
+            ],
+            "support": {
+                "issues": "https://github.com/savannabits/filament-flatpickr/issues",
+                "source": "https://github.com/savannabits/filament-flatpickr/tree/v1.0.3"
+            },
+            "time": "2022-08-25T17:57:55+00:00"
         },
         {
             "name": "spatie/invade",
@@ -5095,16 +5373,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "5.6.0",
+            "version": "5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "76dd1533294e6a48877f17fdc2b499cff16d4661"
+                "reference": "3a9bc00e6d338a9c61f830af654aa5c326407632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/76dd1533294e6a48877f17fdc2b499cff16d4661",
-                "reference": "76dd1533294e6a48877f17fdc2b499cff16d4661",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/3a9bc00e6d338a9c61f830af654aa5c326407632",
+                "reference": "3a9bc00e6d338a9c61f830af654aa5c326407632",
                 "shasum": ""
             },
             "require": {
@@ -5165,7 +5443,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/5.6.0"
+                "source": "https://github.com/spatie/laravel-permission/tree/5.7.0"
             },
             "funding": [
                 {
@@ -5173,7 +5451,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-19T02:06:18+00:00"
+            "time": "2022-11-23T07:01:37+00:00"
         },
         {
             "name": "spatie/simple-excel",
@@ -5237,17 +5515,84 @@
             "time": "2022-11-09T11:25:57+00:00"
         },
         {
-            "name": "stechstudio/filament-impersonate",
-            "version": "2.8",
+            "name": "spatie/valuestore",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/stechstudio/filament-impersonate.git",
-                "reference": "f0b9b743931c53f54075d3c9a2fcf5889ba8919b"
+                "url": "https://github.com/spatie/valuestore.git",
+                "reference": "85144129c7c4611c0e95ef9558cac20fba12cb48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stechstudio/filament-impersonate/zipball/f0b9b743931c53f54075d3c9a2fcf5889ba8919b",
-                "reference": "f0b9b743931c53f54075d3c9a2fcf5889ba8919b",
+                "url": "https://api.github.com/repos/spatie/valuestore/zipball/85144129c7c4611c0e95ef9558cac20fba12cb48",
+                "reference": "85144129c7c4611c0e95ef9558cac20fba12cb48",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0|^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Valuestore\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jolita Grazyte",
+                    "email": "jolita@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily store some values",
+            "homepage": "https://github.com/spatie/valuestore",
+            "keywords": [
+                "json",
+                "spatie",
+                "valuestore"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/valuestore/issues",
+                "source": "https://github.com/spatie/valuestore/tree/1.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-12-03T16:51:45+00:00"
+        },
+        {
+            "name": "stechstudio/filament-impersonate",
+            "version": "2.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stechstudio/filament-impersonate.git",
+                "reference": "4f8af331b25868f10cd4bb6c0bbdaef5d3c1d663"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stechstudio/filament-impersonate/zipball/4f8af331b25868f10cd4bb6c0bbdaef5d3c1d663",
+                "reference": "4f8af331b25868f10cd4bb6c0bbdaef5d3c1d663",
                 "shasum": ""
             },
             "require": {
@@ -5276,9 +5621,9 @@
             "description": "A Filament record action that allows you to impersonate your users.",
             "support": {
                 "issues": "https://github.com/stechstudio/filament-impersonate/issues",
-                "source": "https://github.com/stechstudio/filament-impersonate/tree/2.8"
+                "source": "https://github.com/stechstudio/filament-impersonate/tree/2.10"
             },
-            "time": "2022-11-07T20:08:14+00:00"
+            "time": "2022-11-26T01:57:24+00:00"
         },
         {
             "name": "symfony/console",

@@ -18,7 +18,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('{{ ViewAny }}');
+        return $user->can('view_any_user');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('{{ DeleteAny }}');
+        return $user->can('delete_any_user');
     }
 
     /**
@@ -95,7 +95,7 @@ class UserPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_user');
     }
 
     /**
@@ -117,7 +117,7 @@ class UserPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_user');
     }
 
     /**
@@ -128,7 +128,7 @@ class UserPolicy
      */
     public function replicate(User $user)
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_user');
     }
 
     /**
@@ -139,6 +139,6 @@ class UserPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_user');
     }
 }

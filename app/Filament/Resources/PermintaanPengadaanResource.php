@@ -14,6 +14,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Awcodes\FilamentTableRepeater\Components\TableRepeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,63 +24,141 @@ class PermintaanPengadaanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static?string $pluralLabel = 'Permintaan Pengadaan';
-    protected static?string $pluralModelLabel = 'Permintaan Pengadaan';
+    protected static ?string $pluralLabel = 'Permintaan Pengadaan';
+    protected static ?string $pluralModelLabel = 'Permintaan Pengadaan';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('instansi_id')
-                    ->relationship('instansi', 'nama_instansi')
-                    ->required(),
-                Forms\Components\Select::make('sub_instansi_id')
-                    ->relationship('sub_instansi', 'nama_sub_instansi')
-                    ->required(),
-                Forms\Components\Select::make('kegiatan_id')
-                    ->relationship('kegiatan', 'nama_kegiatan')
-                    ->required(),
-                Forms\Components\Select::make('sub_kegiatan_id')
-                    ->relationship('sub_kegiatan', 'nama_sub_kegiatan')
-                    ->required(),
-                Forms\Components\Select::make('rekening_id')
-                    ->relationship('rekening', 'nama_rekening')
-                    ->required(),
-                Forms\Components\Select::make('program_id')
-                    ->relationship('program', 'nama_program')
-                    ->required(),
-                Forms\Components\Select::make('paket_pengadaan_id')
-                    ->label('Paket Pengadaan')
-                    ->relationship('paketpengadaan', 'nama_paket_pengadaan')
-                    ->required(),
-                Forms\Components\DatePicker::make('waktu_pelaksanaan')->displayFormat('d M Y'),
-                Forms\Components\DatePicker::make('waktu_barang_diterima')->displayFormat(' d M Y'),
-                Forms\Components\TextInput::make('lokasi_barang')
-                    ->required()
-                    ->maxLength(200),
-                Forms\Components\Repeater::make('produk_id')
-                    ->relationship('produks')
+                Forms\Components\Section::make('Data Dasar')
+                    ->description()
                     ->schema([
-                        Forms\Components\Select::make('nama_produk')
-                            ->options(Produk::pluck('nama_produk','nama_produk')),
-                        Forms\Components\TextInput::make('volume')
-                    ])
-                    ->defaultItems(2)
-                    ->columnSpanFull()
-                    ->required(),
-                Forms\Components\MarkdownEditor::make('informasi_lainnya')
-                    ->columnSpanFull()
-                    ->maxLength(65535),
-                Forms\Components\MarkdownEditor::make('spesifikasi_teknis_lainnya')
-                    ->columnSpanFull()
-                    ->maxLength(65535),
-//                Forms\Components\Repeater::make('kualifikasi_kinerja')
-//                    ->schema([
-//                        Forms\Components\TextInput::make('nama_kualifikasi')
+                        Forms\Components\Select::make('instansi_id')
+                            ->relationship('instansi', 'nama_instansi')
+                            ->required(),
+                        Forms\Components\Select::make('sub_instansi_id')
+                            ->relationship('sub_instansi', 'nama_sub_instansi')
+                            ->required(),
+                        Forms\Components\Select::make('kegiatan_id')
+                            ->relationship('kegiatan', 'nama_kegiatan')
+                            ->required(),
+                        Forms\Components\Select::make('sub_kegiatan_id')
+                            ->relationship('sub_kegiatan', 'nama_sub_kegiatan')
+                            ->required(),
+                        Forms\Components\Select::make('rekening_id')
+                            ->relationship('rekening', 'nama_rekening')
+                            ->required(),
+                        Forms\Components\Select::make('program_id')
+                            ->relationship('program', 'nama_program')
+                            ->required(),
+                        Forms\Components\Select::make('paket_pengadaan_id')
+                            ->label('Paket Pengadaan')
+                            ->relationship('paketpengadaan', 'nama_paket_pengadaan')
+                            ->required(),
+                        Forms\Components\DatePicker::make('waktu_pelaksanaan')->displayFormat('d M Y'),
+                        Forms\Components\DatePicker::make('waktu_barang_diterima')->displayFormat(' d M Y'),
+                        Forms\Components\TextInput::make('lokasi_barang')
+                            ->required()
+                            ->maxLength(200),
+                    ])->columns(2)->compact(),
+                Forms\Components\Section::make('Data Produk')
+                    ->description('Input data produk dan volume. Harus diisi.')
+                    ->schema([
+                        TableRepeater::make('produk')->disableLabel()
+                            ->headers(['Nama Produk', 'Volume Produk'])
+                            ->relationship('produks')
+                            ->schema([
+                                Forms\Components\Select::make('nama_produk')->disableLabel()
+                                    ->options(Produk::pluck('nama_produk', 'nama_produk')),
+                                Forms\Components\TextInput::make('volume')->disableLabel()
+                            ])
+                            ->defaultItems(2)
+                            ->columnSpan('full')
+                            ->required(),
+                    ])->compact(),
+                Forms\Components\Section::make('Informasi dan Spesifikasi Teknis Lainnya')
+                    ->description('Masukkan Informasi dan Spesifikasi Teknis Lainnya Bila ada.')
+                    ->schema([
+                        Forms\Components\MarkdownEditor::make('informasi_lainnya')
+                            ->columnSpanFull()
+                            ->maxLength(65535),
+                        Forms\Components\MarkdownEditor::make('spesifikasi_teknis_lainnya')
+                            ->columnSpanFull()
+                            ->maxLength(65535),
+                        Forms\Components\MarkdownEditor::make('kualifikasi_kinerja')
+                            ->columnSpanFull()
+                            ->maxLength(65535),
+                    ])->collapsible(),
+
+//                Components\Pills::make('Heading')
+//                    ->pills([
+//                        Components\Pills\Pill::make('Data Dasar')
+//                            ->icon('heroicon-o-document-text')
+//                            ->schema([
+//
+//                            ]),
+//                        Components\Pills\Pill::make('Data Produk')
+//                            ->schema([
+//
+//                            ])->columns(1),
+//                        Components\Pills\Pill::make('Informasi dan Spesifikasi Teknis Lainnya')
+//                            ->icon('heroicon-o-sparkles')
+//                            ->schema([
+//
+//                            ]),
 //                    ]),
-                Forms\Components\MarkdownEditor::make('kualifikasi_kinerja')
-                    ->columnSpanFull()
-                    ->maxLength(65535),
+
+//                Forms\Components\Select::make('instansi_id')
+//                    ->relationship('instansi', 'nama_instansi')
+//                    ->required(),
+//                Forms\Components\Select::make('sub_instansi_id')
+//                    ->relationship('sub_instansi', 'nama_sub_instansi')
+//                    ->required(),
+//                Forms\Components\Select::make('kegiatan_id')
+//                    ->relationship('kegiatan', 'nama_kegiatan')
+//                    ->required(),
+//                Forms\Components\Select::make('sub_kegiatan_id')
+//                    ->relationship('sub_kegiatan', 'nama_sub_kegiatan')
+//                    ->required(),
+//                Forms\Components\Select::make('rekening_id')
+//                    ->relationship('rekening', 'nama_rekening')
+//                    ->required(),
+//                Forms\Components\Select::make('program_id')
+//                    ->relationship('program', 'nama_program')
+//                    ->required(),
+//                Forms\Components\Select::make('paket_pengadaan_id')
+//                    ->label('Paket Pengadaan')
+//                    ->relationship('paketpengadaan', 'nama_paket_pengadaan')
+//                    ->required(),
+//                Forms\Components\DatePicker::make('waktu_pelaksanaan')->displayFormat('d M Y'),
+//                Forms\Components\DatePicker::make('waktu_barang_diterima')->displayFormat(' d M Y'),
+//                Forms\Components\TextInput::make('lokasi_barang')
+//                    ->required()
+//                    ->maxLength(200),
+//                Forms\Components\Repeater::make('produk_id')
+//                    ->relationship('produks')
+//                    ->schema([
+//                        Forms\Components\Select::make('nama_produk')
+//                            ->options(Produk::pluck('nama_produk','nama_produk')),
+//                        Forms\Components\TextInput::make('volume')
+//                    ])
+//                    ->defaultItems(2)
+//                    ->columnSpanFull()
+//                    ->required(),
+//                Forms\Components\MarkdownEditor::make('informasi_lainnya')
+//                    ->columnSpanFull()
+//                    ->maxLength(65535),
+//                Forms\Components\MarkdownEditor::make('spesifikasi_teknis_lainnya')
+//                    ->columnSpanFull()
+//                    ->maxLength(65535),
+////                Forms\Components\Repeater::make('kualifikasi_kinerja')
+////                    ->schema([
+////                        Forms\Components\TextInput::make('nama_kualifikasi')
+////                    ]),
+//                Forms\Components\MarkdownEditor::make('kualifikasi_kinerja')
+//                    ->columnSpanFull()
+//                    ->maxLength(65535),
             ]);
     }
 

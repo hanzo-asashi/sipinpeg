@@ -12,9 +12,16 @@ use Date;
 use DateTime;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+use Spatie\Valuestore\Valuestore;
 
 class Helpers
 {
+
+    public static function setting(): Valuestore
+    {
+        return Valuestore::make(storage_path('app/settings.json'));
+    }
+
     public static function generateKodeSubSkpd($instansi_id, $prefix = 'SUB', $delimiter = '-', $length = 3, $pad = '0'): string
     {
         $instansi_id = $instansi_id ?? 0;

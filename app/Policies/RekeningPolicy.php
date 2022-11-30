@@ -18,7 +18,7 @@ class RekeningPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('{{ ViewAny }}');
+        return $user->can('view_any_rekening');
     }
 
     /**
@@ -76,7 +76,7 @@ class RekeningPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('{{ DeleteAny }}');
+        return $user->can('delete_any_rekening');
     }
 
     /**
@@ -99,7 +99,7 @@ class RekeningPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_rekening');
     }
 
     /**
@@ -122,7 +122,7 @@ class RekeningPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_rekening');
     }
 
     /**
@@ -134,7 +134,7 @@ class RekeningPolicy
      */
     public function replicate(User $user, Rekening $rekening)
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_rekening');
     }
 
     /**
@@ -145,7 +145,7 @@ class RekeningPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_rekening');
     }
 
 }

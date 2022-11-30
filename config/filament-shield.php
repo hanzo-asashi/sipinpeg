@@ -30,12 +30,18 @@ return [
     'permission_prefixes' => [
         'resource' => [
             'view',
+            'view_any',
             'create',
             'update',
             'backup',
             'restore',
+            'restore_any',
+            'replicate',
+            'reorder',
             'delete',
+            'delete_any',
             'force_delete',
+            'force_delete_any',
             'import',
             'export',
             'manage',

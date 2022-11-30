@@ -18,7 +18,7 @@ class PermintaanPengadaanPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('{{ ViewAny }}');
+        return $user->can('view_any_permintaan::pengadaan');
     }
 
     /**
@@ -76,7 +76,7 @@ class PermintaanPengadaanPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('{{ DeleteAny }}');
+        return $user->can('delete_any_permintaan::pengadaan');
     }
 
     /**
@@ -99,7 +99,7 @@ class PermintaanPengadaanPolicy
      */
     public function forceDeleteAny(User $user)
     {
-        return $user->can('{{ ForceDeleteAny }}');
+        return $user->can('force_delete_any_permintaan::pengadaan');
     }
 
     /**
@@ -122,7 +122,7 @@ class PermintaanPengadaanPolicy
      */
     public function restoreAny(User $user)
     {
-        return $user->can('{{ RestoreAny }}');
+        return $user->can('restore_any_permintaan::pengadaan');
     }
 
     /**
@@ -134,7 +134,7 @@ class PermintaanPengadaanPolicy
      */
     public function replicate(User $user, PermintaanPengadaan $permintaanPengadaan)
     {
-        return $user->can('{{ Replicate }}');
+        return $user->can('replicate_permintaan::pengadaan');
     }
 
     /**
@@ -145,7 +145,7 @@ class PermintaanPengadaanPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('{{ Reorder }}');
+        return $user->can('reorder_permintaan::pengadaan');
     }
 
 }

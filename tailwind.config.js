@@ -14,6 +14,8 @@ module.exports = {
     content: [
         './resources/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
+        './vendor/savannabits/filament-flatpickr/**/*.blade.php',
+        './vendor/awcodes/filament-table-repeater/resources/views/**/*.blade.php',
     ],
     darkMode: 'class',
     theme: {
